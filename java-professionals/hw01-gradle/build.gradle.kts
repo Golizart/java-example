@@ -4,7 +4,14 @@ group = "com.akurus.exaple.gradle"
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow")
+}
 
+val versionsGuava: String by project
+val jUnit: String by project
+
+dependencies {
+    implementation("com.google.guava:guava:$versionsGuava")
+    testImplementation("org.junit.jupiter:junit-jupiter:$jUnit")
 }
 
 tasks {

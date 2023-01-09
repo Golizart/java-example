@@ -15,18 +15,9 @@ allprojects {
     }
 }
 
-val versionsGuava: String by project
-val protobufBom: String by project
-val testcontainersBom: String by project
-val jUnit: String by project
-val springBootDependencies: String by project
 subprojects {
     apply(plugin = "jacoco")
     apply(plugin = "java")
-    dependencies {
-        implementation("com.google.guava:guava:$versionsGuava")
-        testImplementation("org.junit.jupiter:junit-jupiter:$jUnit")
-    }
     configure<org.gradle.api.plugins.internal.DefaultJavaPluginConvention> {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
