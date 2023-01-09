@@ -24,9 +24,6 @@ subprojects {
     apply(plugin = "jacoco")
     apply(plugin = "java")
     dependencies {
-        implementation("org.testcontainers:testcontainers-bom:$testcontainersBom")
-        implementation("org.springframework.boot:spring-boot-dependencies:$springBootDependencies")
-        implementation("com.google.protobuf:protobuf-bom:$protobufBom")
         implementation("com.google.guava:guava:$versionsGuava")
         testImplementation("org.junit.jupiter:junit-jupiter:$jUnit")
     }
