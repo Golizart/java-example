@@ -13,6 +13,16 @@ allprojects {
     repositories {
         mavenCentral()
     }
+    apply(plugin = "io.spring.dependency-management")
+
+    val versionsGuava: String by project
+    val jUnit: String by project
+    dependencyManagement {
+        dependencies {
+            dependency("com.google.guava:guava:$versionsGuava")
+            dependency("org.junit.jupiter:junit-jupiter:$jUnit")
+        }
+    }
 }
 
 subprojects {
@@ -21,6 +31,10 @@ subprojects {
     configure<org.gradle.api.plugins.internal.DefaultJavaPluginConvention> {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+    dependencies {
+        implementation("com.google.guava:guava")
+        testImplementation("org.junit.jupiter:junit-jupiter")
     }
 }
 
