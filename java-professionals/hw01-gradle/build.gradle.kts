@@ -5,6 +5,10 @@ plugins {
     id("com.github.johnrengelman.shadow")
 }
 
+dependencies {
+    implementation("com.google.guava:guava")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+}
 
 tasks {
     named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {

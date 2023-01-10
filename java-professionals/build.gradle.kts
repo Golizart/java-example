@@ -32,10 +32,6 @@ subprojects {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    dependencies {
-        implementation("com.google.guava:guava")
-        testImplementation("org.junit.jupiter:junit-jupiter")
-    }
 }
 
 tasks.register<JacocoReport>("codeCoverageReport") {
